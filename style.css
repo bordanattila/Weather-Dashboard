@@ -1,12 +1,16 @@
 main {
     margin-top: 1rem;
-    margin-right: 18rem;
+    margin-right: 5rem;
     margin-bottom: 1rem;
-    margin-left: 18rem;
+    margin-left: 5rem;
 }
 
 header {
     text-align: center;
+}
+
+p {
+    cursor: pointer;
 }
 
 .search {
@@ -15,4 +19,16 @@ header {
 
 ul {
     list-style-type: none;
+}
+
+.stretch {
+    width: 100%;
+}
+
+.margin {
+    margin: 0.5rem 0;
+}
+
+.b {
+    border: 3px solid purple;
 }
