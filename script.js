@@ -68,13 +68,18 @@ function getLongLat (city_name) {
 var temperatureShow;
 var windShow;
 var humidityShow;
-var icon;
+var getIcon;
 
+var cityToShow = $("#yourResult");
 function displayCity (city_name) {
-    var cityToShow = $("#yourResult");
-    cityToShow.text(city_name + " ( " + today + " ) " + icon);
+    var iconURL = "http://openweathermap.org/img/wn/"+ getIcon +"@2x.png";
+    var image = $("<img>");
+    image.attr("id", "icon")
+    // cityToShow.append(image)
+    $("#icon").attr("src", iconURL)
+    cityToShow.text(city_name + " ( " + today + " ) ");
     var temperature = $("<p>");
-    temperature.text("Temperature: "+temperatureShow+ " C");
+    temperature.text("Temperature: "+temperatureShow+ " °C");
     cityToShow.append(temperature)
     var wind =$("<p>");
     wind.text("Wind: "+windShow+" Km/h");
@@ -82,6 +87,10 @@ function displayCity (city_name) {
     var humidity = $("<p>");
     humidity.text("Humidity: "+humidityShow+" %");
     cityToShow.append(humidity)
+    // add icon
+    console.log("icon")
+    console.log(getIcon)
+  
 }
 
 function displayCityAgain (searchedCitys) {
