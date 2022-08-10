@@ -5,60 +5,91 @@
   <meta charset="utf-8">
   <title>Weather Dashboard</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </head>
 
 <body>
 
   <main class="border border-info">
     <header>
-      <h1>Weather Dashboard</h1>
+      <h1 class="bg-gradient">Weather Dashboard</h1>
     </header>
 
     <div class="container">
       <div class="row align-items-start">
-        <div class="col-4 search border border-info">
+        <div class="col-3 search border border-info">
           <h3 class="stretch margin">Search for a City:</h3>
           <input type="text" id="lookingFor" placeholder="city name" class="stretch margin"><br>
-          <button id="find" class="btn btn-block btn-info stretch margin">Search</button>
-          <div id="history"></div> 
-         
+          <button id="find" class="btn btn-block btn-info stretch margin">Search</button> 
+          <hr>
+          <div id="history"></div>
+          <button class="btn btn-danger stretch margin">Clear history</button>
         </div>
-      
-        <div class="col result stretch">
-          <div class="test border border-info">
 
-            <span id="yourResult" class="margin "></span>
+        <div class="col stretch">
+          <div class="border border-info result" id="yourResult">
+            <span class="city">City name</span>
+            <img class="city_img" src="" alt="Weather icon">
+            <p class="temperature">Temperature</p>
+            <p class="wind">Wind</p>
+            <p class="humidity">Humidity</p>
+            <span class="uv">UV index</span><span class="uvBox"></span>
           </div>
+
           <h4 class="margin">5 Days Forecast</h4>
-        
-            <div class="row align-items-start">
-            <div class="col margin border border-info">
-              One of three columns
-            </div>
-            <div class="col margin border border-info">
-              Two of three columns
-            </div>
-            <div class="col margin border border-info">
-              Three of three columns
-            </div>
-            <div class="col margin border border-info">
-              Four of three columns
-            </div>
-            <div class="col margin border border-info">
-              Five of three columns
-            </div>
+
+          <div class="row align-items-start" id="card">
             
+              <div class="col margin border border-info card-1 background">
+                <p class="cardDate-1">Date</p>
+                <img class="card_img-1" src="" alt="Weather icon"></img>
+                <p class="cardTemperature-1">Temperature</p>
+                <p class="cardWind-1"></p>
+                <p class="cardHumidity-1">Humidity</p>
+              </div>
+              <div class="col margin border border-info card-2 background">
+                <p class="cardDate-2">Date</p>
+                <img class="card_img-2" src="" alt="Weather icon"></img>
+                <p class="cardTemperature-2">Temperature</p>
+                <p class="cardWind-2"></p>
+                <p class="cardHumidity-2">Humidity</p>
+              </div>
+              <div class="col margin border border-info card-3 background">
+                <p class="cardDate-3">Date</p>
+                <img class="card_img-3" src="" alt="Weather icon"></img>
+                <p class="cardTemperature-3">Temperature</p>
+                <p class="cardWind-3"></p>
+                <p class="cardHumidity-3">Humidity</p>
+              </div>
+              <div class="col margin border border-info card-4 background">
+                <p class="cardDate-4">Date</p>
+                <img class="card_img-4" src="" alt="Weather icon"></img>
+                <p class="cardTemperature-4">Temperature</p>
+                <p class="cardWind-4"></p>
+                <p class="cardHumidity-4">Humidity</p>
+              </div>
+              <div class="col margin border border-info card-5 background">
+                <p class="cardDate-5">Date</p>
+                <img class="card_img-5" src="" alt="Weather icon"></img>
+                <p class="cardTemperature-5">Temperature</p>
+                <p class="cardWind-5"></p>
+                <p class="cardHumidity-5">Humidity</p>
+              </div>
+           
           </div>
-      </div>
-      
+        </div>
+
   </main>
-   
+
   <footer>
-    
+
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
   <script src="./script.js"></script>
 </body>
 

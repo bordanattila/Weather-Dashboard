@@ -13,12 +13,24 @@ p {
     cursor: pointer;
 }
 
-.search {
-    margin-right: 2rem;
+img {
+    width:30% ;
 }
 
 ul {
     list-style-type: none;
+}
+
+h1 {
+    background-color: #94B49F;
+}
+
+#icon {
+    width: 5%;
+}
+
+.search {
+    margin-right: 2rem;
 }
 
 .stretch {
@@ -31,4 +43,38 @@ ul {
 
 .b {
     border: 3px solid purple;
+}
+
+.colour {
+    background-color: #ECB390;
+    border-color: #ECB390;
+}
+
+.result {
+    background-color: #CEE5D0;
+}
+
+.background {
+    background-color: #FCF8E8;
+    margin-right: 5px;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.purple {
+    background-color: purple;
 }
