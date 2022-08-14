@@ -10,11 +10,15 @@ header {
 }
 
 p {
-    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.uv, #uvBox {
+    font-size: 1.5rem;
 }
 
 img {
-    width:30% ;
+    width:35% ;
 }
 
 ul {
@@ -26,7 +30,7 @@ h1 {
 }
 
 #icon {
-    width: 5%;
+    width: 10%;
 }
 
 .search {
@@ -37,17 +41,16 @@ h1 {
     width: 100%;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 .margin {
     margin: 0.5rem 0;
 }
 
 .b {
     border: 3px solid purple;
-}
-
-.colour {
-    background-color: #ECB390;
-    border-color: #ECB390;
 }
 
 .result {
@@ -77,4 +80,15 @@ h1 {
 
 .purple {
     background-color: purple;
+}
+
+.city {
+    font-weight: bold;
+    font-size: 2rem;;
+}
+
+.btn-warning {
+    color: #000;
+    background-color: #E9DAC1;
+    border-color: #E9DAC1;
 }
