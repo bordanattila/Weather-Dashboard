@@ -41,7 +41,7 @@ checkHistory();
 
 //Add city name to get lat and long
 function getLongLat (city_name) {
-    fetch ("http://api.openweathermap.org/geo/1.0/direct?q="+city_name+"&appid="+api_key)
+    fetch ("https://api.openweathermap.org/geo/1.0/direct?q="+city_name+"&appid="+api_key)
     .then(function (geocord) {
         return geocord.json();
     })
@@ -150,6 +150,7 @@ $("button.btn-danger").on("click", function () {
     location.reload();
 })
 
+//Add content to 5 day forecast cards
 function displayCards (weather) {
     for (i=1; i<6; i++) {
         var date =  weather.daily[i].dt;
@@ -172,6 +173,7 @@ function displayCards (weather) {
     }    
 }
 
+//Check uv index and colour it accordingly
 function checkUVindex (uviShow) {
     uvBox.removeClass("green yellow orange red purple")
     if (uviShow < 3 ) {
