@@ -26,7 +26,7 @@ var checkHistory = function () {
             var valueCity = localStorage.getItem(city);
             var history = $("#history");
             var historyItem = $("<button>")
-            historyItem.addClass("btn btn-secondary stretch margin")
+            historyItem.addClass("btn btn-warning stretch margin")
             historyItem.text(valueCity)
             history.append(historyItem);
             historyItem.attr("id", targetCity)
@@ -75,7 +75,7 @@ function getWeather (lat, lon) {
 //Add content to current weather
 function displayCity (city_name) {
     mainLine.text(city_name + " ( " + todayShow + " ) ");
-    var iconURL = "http://openweathermap.org/img/wn/"+ getIcon +"@2x.png";
+    var iconURL = "https://openweathermap.org/img/wn/"+ getIcon +"@2x.png";
     var image = $(".city_img");
     image.attr("id", "icon");
     $("#icon").attr("src", iconURL);
@@ -85,10 +85,11 @@ function displayCity (city_name) {
     uvi.text("UV Index: ");
     uvBox.text(uviShow);
     checkUVindex(uviShow);  
+    
 }
 
 //Dispaly data for city selected form search hstory
-function displayCityAgain () {
+function displayCityAgain (city_name) {
     getLongLat(city_name);
 }
 
@@ -97,7 +98,7 @@ function addTohistory (city_name) {
     var searchedCitys = $("#history");    
     var newItem = $("<button>");
     newItem.text(city_name);
-    newItem.addClass("btn btn-secondary stretch margin");
+    newItem.addClass("btn btn-warning stretch margin");
     searchedCitys.append(newItem);
     $("button").attr("id", function(index) {
         return "city"+index;
@@ -105,7 +106,7 @@ function addTohistory (city_name) {
     store(newItem, city_name);
 }
 
-//Save city name to earch history in local storage
+//Save city name to search history in local storage
 function store (newItem, city_name) {
     cityID = $(newItem).attr("id");
     localStorage.setItem(cityID, city_name);
@@ -126,12 +127,12 @@ function capitalize (city_entered) {
         citySplit[i] = citySplit[i].charAt(0).toUpperCase() + citySplit[i].substring(1);     
     }
     city_name = citySplit.join(" ");
-    getLongLat(city_name);
     addTohistory(city_name);
+    getLongLat(city_name);
 }
 
 //Event listener for the search history
-$("button.btn-secondary").on("click", function () {
+$("#history").on("click", ".btn-warning", function () {
     city_name = ($(this).text());
     displayCityAgain(city_name);
 })
@@ -161,11 +162,11 @@ function displayCards (weather) {
         var cardWind = weather.daily[i].wind_speed;        
         var cardDate = $(".cardDate-"+i);
         cardDate.text(dateShow);        
-        var cardiconURL = "http://openweathermap.org/img/wn/"+ cardIcon +"@2x.png";
+        var cardiconURL = "https://openweathermap.org/img/wn/"+ cardIcon +"@2x.png";
         var image = $(".card_img-"+i);       
         image.attr("src", cardiconURL);
         var cardTemperatureShow = $(".cardTemperature-"+i);
-        cardTemperatureShow.text("Temprature: " + cardTemperature + " °C");        
+        cardTemperatureShow.text("Temperature: " + cardTemperature + " °C");        
         var cardHumidityShow = $(".cardHumidity-"+i);
         cardHumidityShow.text("Humidity: " + cardHumidity + "%");        
         var cardWindShow = $(".cardWind-"+i);
