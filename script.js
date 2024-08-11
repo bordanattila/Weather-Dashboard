@@ -2,7 +2,6 @@ var city_name = "";
 var exclude = "alerts,minutely,hourly"
 var inputField = $("#lookingFor");
 var cityID;
-// api_key = "019e087c294ce22b349c23fe666c8451";
 var api_key = "64ccff0c15dc71ef4d267abbba4175d0";
 var today = "";
 var temperatureShow;
@@ -60,7 +59,6 @@ function getWeather (lat, lon) {
         return response.json();
     })
     .then(function (weather) {
-        console.log(weather)
         today = weather.current.dt;
         todayShow = moment.unix(today).format("YYYY MMM Do");
         temperatureShow = weather.current.temp;
