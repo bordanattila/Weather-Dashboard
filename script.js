@@ -2,7 +2,7 @@ var city_name = "";
 var exclude = "alerts,minutely,hourly"
 var inputField = $("#lookingFor");
 var cityID;
-var api_key = "64ccff0c15dc71ef4d267abbba4175d0";
+var api_key = "";
 var today = "";
 var temperatureShow;
 var windShow;
